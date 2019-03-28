@@ -1,6 +1,5 @@
 <template>
-    <div class="hello">
-        <h1>{{ msg }}</h1>
+    <div>
         <gmap-map :center="center" :options="options" :zoom="10" style="width: 500px; height: 500px">
             <gmap-cluster>
                 <gmap-marker v-for="(m, index) in markers"
@@ -18,7 +17,7 @@
 
 <script>
 export default {
-    name: 'HelloWorld',
+    name: 'TheMap',
     data() {
         return {
             center: {
@@ -44,39 +43,18 @@ export default {
                 streetViewControl: false,
             },
             markers: [
-            {
-                position: {lat: 52.111287, lng: 5.111602},
-                text: 'x'
-            }, {
-                position: {lat: 52.091287, lng: 5.111602},
-                text: 'y'
-            }, {
-                position: {lat: 52.338977, lng: 4.913475},
-                text: 'z'
-            }
+                {
+                    position: {lat: 52.111287, lng: 5.111602},
+                    text: 'x'
+                }, {
+                    position: {lat: 52.091287, lng: 5.111602},
+                    text: 'y'
+                }, {
+                    position: {lat: 52.338977, lng: 4.913475},
+                    text: 'z'
+                }
             ]
         };
     },
-    props: {
-        msg: String
-    }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-    margin: 40px 0 0;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-a {
-    color: #42b983;
-}
-</style>
